@@ -17,6 +17,8 @@ body {
 }
 
 
+  
+
 
 .playerDiv {
     flex: 1;
@@ -24,20 +26,20 @@ body {
     /* margin: 100px; */
     /* width: 300px; */
     margin: 0px;
-    height: 710px;
+    /* height: 710px; */
     margin-top: -750px;
 
 }
 .playerDiv:first-child {
     /* margin-left: 30px; */
-    background-color: rgba(64, 55, 55, 0.356);
-    /* background-color: rgba(64, 39, 39, 0.523) */
+    /* background-color: rgba(64, 55, 55, 0.356); */
+    background-color: rgba(64, 55, 55, 0.356)
 }
 
 .playerDiv,
 .player2Div {
-
-    background-color: rgba(64, 55, 55, 0.356);
+    background-color: rgba(64, 55, 55, 0.356)
+    /* background-color: rgba(64, 55, 55, 0.356); */
 
 }
 

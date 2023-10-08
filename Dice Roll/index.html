@@ -4,67 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Dice Roll</title>
+    <link rel="stylesheet" href="./index.css">
+    <title>DICE ROLL</title>
 </head>
 
 <body>
-    <button class="btn1" role="button">
-        NEW GAME
-    </button>
-
-    <div class="image1Div">
-
-    </div>
-
-    <div class="image2Div">
-
-    </div>
-
-    <div class="dealerImg">
-
-    </div>
-  
-    <button class="btn2" role="button">
-        ROLL DICE
-    </button><br>
-
-    <button class="btn3" role="button">
-        HOLD
-    </button>
-
-
-  
-
-
-
-
-    <!-- 
-classes and divs for player   -->
-    <div class="containerPlayers">
-        <div class="playerDiv player1Div">
-
-            <h1>Player 1</h1>
-            <h1 class="player1Score">0</h1>
-            <div class="current current1">
-                <p>CURRENT</p>
-                <h1 class="current1Score">0</h1>
-
-            </div>
+    <div class="container">
+        <div class="child">
+            <h1>WELCOME TO DICE ROLL GAME</h1>
+            <h2>Rules</h2>
+                <ul style="list-style-type:disc;">
+                    <li>The game has 2 players, playing in rounds.</li>
+                    <li>In each turn, a player rolls 2 dice as many times as he
+                        wishes.</li>
+                    <li>Each result will get added to his round’s score.</li>
+                    <li> If the player rolls a double six all his round’s score
+                        gets lost.</li>
+                    <li>A player can choose to ‘Hold’, which means that his
+                        round’s score gets added to his global score.</li>
+                    <li>After that, it's the next player’s turn....</li>
+                    <li>The first player to reach 100 points wins.</li>
+                   
+                </ul>
+            
         </div>
-
-        <div class="playerDiv player2Div">
-            <h1>Player 2</h1>
-            <h1 class="player2Score">0</h1>
-            <div class="current current2">
-                <p>CURRENT</p>
-                <h1 class="current2Score">0</h1>
-            </div>
-
+        <div class="start">
+            <h2>So let's start the game</h2>
+            <button class="btn1">start</button>
         </div>
     </div>
 
-    <script src="./main.js">
+    <script src="./index.js">
 
     </script>
 </body>
