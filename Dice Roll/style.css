@@ -17,8 +17,11 @@ body {
 }
 
 
-  
-
+/*   
+.form{
+    text-align: center;
+    margin-top: 500px;;
+} */
 
 .playerDiv {
     flex: 1;
@@ -33,12 +36,12 @@ body {
 .playerDiv:first-child {
     /* margin-left: 30px; */
     /* background-color: rgba(64, 55, 55, 0.356); */
-    background-color: rgba(64, 55, 55, 0.356)
+    background-color: rgba(39, 22, 22, 0.356)
 }
 
 .playerDiv,
 .player2Div {
-    background-color: rgba(64, 55, 55, 0.356)
+    background-color: rgba(39, 22, 22, 0.356)
     /* background-color: rgba(64, 55, 55, 0.356); */
 
 }

@@ -27,6 +27,14 @@ let player2Color = document.querySelector(".player2Div")//hold player 2
 let result1 = document.querySelector(".result1")
 let result2 = document.querySelector(".result2")
 
+//select input value
+let value1 = document.querySelector(".value")
+
+function getVal() {
+    let val = document.querySelector('.value').value;
+    console.log(`val = ${val}`);
+  }
+
 
 
 
@@ -207,19 +215,24 @@ rollDiceBtn.addEventListener("click", function (e) {
 //hold button
 holdBtn.addEventListener("click", function (e) {
     // console.log(`player1 = ${player1}`)
+
+    colorStylingChange();
     if (player1 == true) {
         let newCurrent1;
         console.log(score_1)
         current1 += score_1
         newCurrent1 = current1
         player1Score.innerText = newCurrent1
-       
-        
-        console.log(`new = ${newCurrent1}`)
-        
+
+
+        // console.log(`new = ${newCurrent1}`)
+
         checkWinner1(newCurrent1)
         score_1 = 0;
+      
         current1Score.innerText = score_1
+
+
 
     } else {
         let newCurrent2;
@@ -227,32 +240,26 @@ holdBtn.addEventListener("click", function (e) {
         current2 += score_2
         newCurrent2 = current2
         player2Score.innerText = newCurrent2
-        
-       
-       
+
+
+
         console.log(`new = ${newCurrent2}`)
         checkWinner2(newCurrent2)
         score_2 = 0;
         current2Score.innerText = score_2
 
     }
-
-
-
-
-
-
     activePlayer();
-    colorStylingChange();
-
-
 
 
 })
 
 //for reset 
 newGameBtn.addEventListener("click", function (e) {
+    
     location.reload()
+   
+
 })
 
 
@@ -269,11 +276,11 @@ function activePlayer() {
 
 function colorStylingChange() {
     if (player1 == true) {
-        player1Color.style.backgroundColor = "rgba(64, 55, 55, 0.356)"
-        player2Color.style.backgroundColor = "rgba(49, 34, 34, 0.523)"
-    } else {
+        player1Color.style.backgroundColor = "rgba(39, 22, 22, 0.356)"
         player2Color.style.backgroundColor = "rgba(64, 55, 55, 0.356)"
-        player1Color.style.backgroundColor = "rgba(49, 34, 34, 0.523)"
+    } else {
+        player1Color.style.backgroundColor = "rgba(49, 34, 34, 0.523)	"
+        player2Color.style.backgroundColor = "rgba(39, 22, 22, 0.356)"
     }
 
 
@@ -291,43 +298,53 @@ function checkWinner1(newCurrent1) {
 
     if (newCurrent1 > 100) {
         console.log(`newCurrent1 = ${newCurrent1}`)
-        
+
+        // player1Score.innerText = newCurrent1
+
+  
         // containerPlayers.style.backgroundColor = "red"
         changeCurrent2ToWinner.innerText = "YOU WIN :)"
         gameStatusImg.style.backgroundImage = "url('./images/winnerGif1.gif')"
         // disableButtonClick()
+        
+      
+        
         win2++;
-        result2.textContent = `Player 1 ---> ${win2}`
-        return true
+        // result2.textContent = `Player 2 ---> ${win2}`
+        player1Color.style.backgroundColor = "rgba(39, 22, 22, 0.356)"
+        player2Color.style.backgroundColor = "rgba(64, 55, 55, 0.356)"
+        document.querySelector('.btn3').disabled = true;
+        document.querySelector('.btn2').disabled = true;
+        
+        return newCurrent1
 
     }
-    
+
 }
 
 function checkWinner2(newCurrent2) {
-    // containerPlayers.style.backgroundColor = "red"
+
     if (newCurrent2 > 100) {
+       
         win1++;
-        
-        result1.textContent = `Player 1 ---> ${win1}`
-        
-        changeCurrent1ToWinner.innerText = "COMPUTER WIN"
+       
+        // result1.textContent = `Player 1 ---> ${win1}`
+        changeCurrent1ToWinner.innerText = "COMPUTER WON"
         gameStatusImg.style.backgroundImage = "url('./images/lose.gif')"
+        player1Color.style.backgroundColor = "rgba(49, 34, 34, 0.523)	"
+        player2Color.style.backgroundColor = "rgba(39, 22, 22, 0.356)"
+        document.querySelector('.btn3').disabled = true;
+        document.querySelector('.btn2').disabled = true;
         // disableButtonClick()
-        return true
+
+       
+
+        return newCurrent2;
 
     }
-    
-}
-
-
-function disableButtonClick() {
-
-    // holdBtn.style.display = "none"
-    // rollDiceBtn.style.display = "none"
-    // containerPlayers.style.display = "none"
-    // window.open("./newGame.html");
 
 }
+
+
 
 
