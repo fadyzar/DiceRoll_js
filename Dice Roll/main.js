@@ -1,4 +1,18 @@
 //select all Elements that we will use 
+
+
+
+
+//Audio
+let diceRollAudio = new Audio("./Audio/rollingDice.mp3");
+let holdAudio = new Audio("./Audio/hold.mp3");
+let loseAudio = new Audio("./Audio/loseGame.mp3");
+let wonAudio = new Audio("./Audio/wongame.mp3");
+
+
+
+
+
 let containerPlayers = document.querySelector(".playerDiv")
 //Select all images
 
@@ -63,7 +77,8 @@ let win2 = 0
 //roll button
 rollDiceBtn.addEventListener("click", function (e) {
 
-
+   
+    diceRollAudio.play();
     let firstDrop = 0;
     let secondDrop = 0;
 
@@ -196,14 +211,14 @@ rollDiceBtn.addEventListener("click", function (e) {
 
 
 
-    // if (firstDrop === 6 && secondDrop === 6) {
-    //     score_1 = 0;
-    //     score_2 = 0;
-    //     // player1Score.innerText = score_1
-    //     // player1Score.innerText = score_2
-    //     alert(`OOPS, you get double six `)
-    //     gameStatusImg.style.backgroundImage = "url('./images/sixdice.jpeg')"
-    // }
+    if (firstDrop === 6 && secondDrop === 6) {
+        score_1 = 0;
+        score_2 = 0;
+        // player1Score.innerText = score_1
+        // player1Score.innerText = score_2
+        alert(`OOPS, you get double six `)
+        gameStatusImg.style.backgroundImage = "url('./images/sixdice.jpeg')"
+    }
 
     current1Score.innerText = score_1
     current2Score.innerText = score_2
@@ -215,6 +230,10 @@ rollDiceBtn.addEventListener("click", function (e) {
 //hold button
 holdBtn.addEventListener("click", function (e) {
     // console.log(`player1 = ${player1}`)
+    holdAudio.play();
+
+
+
 
     colorStylingChange();
     if (player1 == true) {
@@ -298,12 +317,12 @@ function checkWinner1(newCurrent1) {
 
     if (newCurrent1 > 100) {
         console.log(`newCurrent1 = ${newCurrent1}`)
-
+        wonAudio.play();
         // player1Score.innerText = newCurrent1
 
   
         // containerPlayers.style.backgroundColor = "red"
-        changeCurrent2ToWinner.innerText = "YOU WIN :)"
+        changeCurrent2ToWinner.innerText = "YOU WON :)"
         gameStatusImg.style.backgroundImage = "url('./images/winnerGif1.gif')"
         // disableButtonClick()
         
@@ -325,7 +344,7 @@ function checkWinner1(newCurrent1) {
 function checkWinner2(newCurrent2) {
 
     if (newCurrent2 > 100) {
-       
+       loseAudio.play();
         win1++;
        
         // result1.textContent = `Player 1 ---> ${win1}`
