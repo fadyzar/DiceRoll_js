@@ -313,6 +313,16 @@ console.log(`player1score = ${score_1}`)
 
 
 
+
+
+function getVal() {
+    let val = document.querySelector('input').value;
+    console.log(val);
+   return val;
+   
+  }
+
+
 function checkWinner1(newCurrent1) {
 
     if (newCurrent1 > 100) {
@@ -329,7 +339,7 @@ function checkWinner1(newCurrent1) {
       
         
         win2++;
-        // result2.textContent = `Player 2 ---> ${win2}`
+        result2.textContent = `Player 2 ---> ${win2}`
         player1Color.style.backgroundColor = "rgba(39, 22, 22, 0.356)"
         player2Color.style.backgroundColor = "rgba(64, 55, 55, 0.356)"
         document.querySelector('.btn3').disabled = true;
@@ -347,7 +357,7 @@ function checkWinner2(newCurrent2) {
        loseAudio.play();
         win1++;
        
-        // result1.textContent = `Player 1 ---> ${win1}`
+        result1.textContent = `Player 1 ---> ${win1}`
         changeCurrent1ToWinner.innerText = "COMPUTER WON"
         gameStatusImg.style.backgroundImage = "url('./images/lose.gif')"
         player1Color.style.backgroundColor = "rgba(49, 34, 34, 0.523)	"
